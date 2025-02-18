@@ -1,0 +1,135 @@
+.pagination-outer{ text-align: center; }
+
+.pagination{
+    font-family: 'Work Sans', sans-serif;
+    padding: 0 10px;
+    border-radius: 0;
+    display: inline-flex;
+    position: relative;
+}
+
+/*.pagination:before{
+    content: '';
+    background: #999;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}*/
+.divControl { margin-bottom: 30px; }
+.pagination .page-link{
+    color: #fff;
+    background: #555;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 35px;
+    height: 35px;
+    width: 33px;
+    padding: 0;
+    margin: 0 7px;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+}
+.pagination .page.selected{
+    color: #fff;
+    background: #555;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 35px;
+    height: 35px;
+    width: 33px;
+    padding: 0;
+    margin: 0 7px;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+    color: #fff;
+    background: #c7100f;
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+.pagination .page.selected:hover,
+.pagination .page.selected:focus{
+    color: #fff;
+    background: #c7100f;
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+.pagination .page-link:before,
+.pagination .page-link:after{
+    content: '';
+    background: linear-gradient(to right bottom,transparent 50%,#111 55%);
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0.3s;
+}
+
+.pagination .page-link:after{
+    transform: rotateY(180deg);
+    left: auto;
+    right: -7px;
+}
+.pagination .page.selected:before,
+.pagination .page.selected:after{
+    content: '';
+    background: linear-gradient(to right bottom,transparent 50%,#111 55%);
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0.3s;
+}
+
+.pagination .page.selected:after{
+    transform: rotateY(180deg);
+    left: auto;
+    right: -7px;
+}
+
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link{
+    border-radius: 0;
+}
+#divPages { display: flex; }
+@media only screen and (max-width: 480px){
+    .pagination{
+        font-size: 0;
+        display: inline-block;
+    }
+
+    .pagination li{
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (max-width: 380px){
+    .pagination:before{ display: none; }
+
+    .pagination li a.page-link{ margin-bottom: 10px; }
+    
+    .pagination li a.page-link:before,
+    .pagination li a.page-link:after{
+        display: none;
+    }
+}
